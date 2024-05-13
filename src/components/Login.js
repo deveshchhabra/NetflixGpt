@@ -11,12 +11,8 @@ const login = () => {
         alt='bg'/>
       </div>
       <Form/>
-      {/* <form className='w-3/12  absolute  p-12 bg-black my-36 mx-auto right-0 left-0 text-white opacity-80'>
-        <h1 className='font-bold  text-3xl py-2 m-2 '>Sign in</h1>
-        <input type='text' placeholder='email' className='p-2 m-2 w-full bg-gray-700'/>
-        <input type='passoword' placeholder='Password' className='p-2 m-2 w-full bg-gray-700' />
-        <button className='p-2 m-2 bg-red-700 w-full rounded-lg'>Sign In</button>
-        <p className='py-4'>New Netflix? Sign Up Now</p>
-      </form> */}
+      
     </div> )}
 export default login
+
+
