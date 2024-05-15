@@ -33,7 +33,7 @@
  - usePopularMovies Custom hook
  - GPT Search Page
  - GPT Search Bar
-(BONUS) Multi-language Feature in our App)
+(BONUS) Multi-language Feature in our App
 # Features
   - Login/Sign Up
     - Sign In /Sign up form
