@@ -2,16 +2,16 @@ import React,{useRef, useState} from 'react'
 import { checkValidData } from '../utils/validate';
 import { auth } from '../utils/firebase';
 import {  createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import {  updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-
-
+import { USER_AVATAR } from '../utils/constant';
 const Form = () => {
   const [isSignInForm, setisSignInForm] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
-  const navigate=useNavigate()
+
+  // const navigate=useNavigate()
   const dispatch=useDispatch();
   const toggleSignInForm=()=>{
     setisSignInForm(!isSignInForm)
@@ -38,12 +38,12 @@ const Form = () => {
     // Signed up 
     const user = userCredential.user;
     updateProfile(user, {
-      displayName: firstname.current.value, photoURL: "https://tse1.mm.bing.net/th?id=OIP.4cmK9d36bF0F7-V-SaVPnAHaG_&pid=Api&P=0&h=180"
+      displayName: firstname.current.value, photoURL: USER_AVATAR
     }).then(() => {
       const {uid,email,displayName,photoURL} = auth.currentUser; //auth because user is not updated
       dispatch(addUser  ({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
-navigate("/browse")
-
+      // navigate("/browse")
+ 
     }).catch((error) => {
       // An error occurred
       seterrorMessage(error.message)
@@ -67,8 +67,8 @@ console.log(user)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user);
-    navigate("/browse")
+    // console.log(user);
+    // navigate("/browse")
 
     // ...
   })
