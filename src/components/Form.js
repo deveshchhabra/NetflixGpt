@@ -25,9 +25,9 @@ const Form = () => {
   
     const handleButtonClick = () => {
       // console.log(firstname.current.value)
-      console.log(email.current.value)
+      // console.log(email.current.value)
 
-      console.log(password.current.value)
+      // console.log(password.current.value)
 
       const message = checkValidData(email.current.value, password.current.value);
       seterrorMessage(message);
@@ -49,7 +49,7 @@ const Form = () => {
       seterrorMessage(error.message)
       // ...
     });
-console.log(user)
+// console.log(user)
 
     // ...
   })
@@ -66,9 +66,7 @@ console.log(user)
         signInWithEmailAndPassword(auth, email.current.value, password.current.value)
   .then((userCredential) => {
     // Signed in 
-    const user = userCredential.user;
-    // console.log(user);
-    // navigate("/browse")
+    
 
     // ...
   })

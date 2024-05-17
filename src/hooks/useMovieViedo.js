@@ -8,21 +8,21 @@ const useMovieTrailer=(movieId)=>{
 
     // const [TrailerId, setTrailerId] = useState(null);
     //fetch the viedo && Updating the store
+   
+useEffect(()=>{
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+      
     const getMovieVideos = async () => {
-        console.log(movieId)
         const data = await fetch('https://api.themoviedb.org/3/movie/823464/videos?language=en-US', API_OPTION)
         const JSON=await data.json()
-        console.log("p")
-        console.log(JSON.results[12])
     const filterData=JSON.results.filter((viedo)=>viedo.type==="Trailer")
-    console.log(filterData)
     const trailer=filterData.length?filterData[2]:JSON.results[1];
-    console.log(trailer);
     // setTrailerId(trailer.key)
     dispatch(addTrailerViedo(trailer));
-}
-useEffect(()=>{
-    !trailerVideo && getMovieVideos();
+    
+    }
+    getMovieVideos();
 },[])
 }
+
 export default useMovieTrailer;
