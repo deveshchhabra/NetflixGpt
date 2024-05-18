@@ -80,7 +80,7 @@ const Form = () => {
     }
   return (
     <div>
-      <form onClick={(e)=>e.preventDefault()} className='w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white opacity-80'> 
+      <form onClick={(e)=>e.preventDefault()} className='w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white opacity-80'> 
       <h1 className='font-bold text-3xl py-2 m-2'>{isSignInForm?"Sign In":"Sign Up"}</h1>
       {!isSignInForm &&<input  ref={firstname} type='text' placeholder='firstname' className='p-2 m-2 w-full bg-gray-700'></input>}
       <input  ref={email}type='text' placeholder='email' className='p-2 m-2 w-full bg-gray-700'></input>

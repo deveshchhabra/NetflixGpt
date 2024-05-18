@@ -17,11 +17,12 @@ const Browse = () => {
   return (
     <div>
       <Header/>
-      {
-        showGptSearch ?<GPTSearchContainer />:<>
+      {!showGptSearch?<GPTSearchContainer />:<>
          <MainContainer/>
-      <SecondaryContainer/></>
-      }
+      <SecondaryContainer/>
+      </>
+
+  }
       
      
      {/* Plaining

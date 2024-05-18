@@ -7,9 +7,9 @@ const GPTSearchContainer = () => {
   return (
     <>
      <div className="fixed -z-10 ">
-        <img className="  " src={BACK_GROUND} alt="logo" />
+        <img  className='' src={BACK_GROUND} alt="logo" />
       </div>
-      <div className="">
+      <div className="pt-[10%] md:p-0">
         <GPTSearchBar />
         <GPTMovieSuggestion />
       </div>

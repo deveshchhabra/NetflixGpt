@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useMovieTrailer from '../hooks/useMovieViedo'
 import {  useSelector } from 'react-redux'
+import lang from '../utils/languageConstant'
 
 const ViedoBackground = ({movieId}) => {
+
+  const langKey=useSelector((store)=>store.config.lang)
+  const MuteGpt=useSelector(store=>store.gpt.MuteGpt);
+  console.log(MuteGpt)
+
     const trailerViedo=useSelector(store=>store.movies?.trailerViedo)
     useMovieTrailer({movieId});
     return (
 
     <div className='w-screen'>
+     
+      {console.log(lang[langKey].apiKey)}
+
+{MuteGpt?"mute-1":""}
       <iframe
         className="w-screen aspect-video"
         src={
-          "https://www.youtube.com/embed/" +
-          trailerViedo?.key + "?&autoplay=1&mute=1"
+        // "https://www.youtube.com/embed/"+lang[langKey].apiKey + "?&autoplay=1&mute-1"
+        //  // "https://www.youtube.com/embed/" +
+        //  // trailerViedo?.key
+        //   // + "?&autoplay=1&mute-1rel=0"
          
+        "https://www.youtube.com/embed/"+lang[langKey].apiKey+`?&autoplay=1&mute=1${MuteGpt?"mute-1":""}`
         }
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -8,7 +8,7 @@ const login = () => {
     <div>
       <Header/>
       <div className='absolute'>
-        <img src={BACK_GROUND}
+        <img className=' ' src={BACK_GROUND}
         //
         alt='bg'/>
       </div>

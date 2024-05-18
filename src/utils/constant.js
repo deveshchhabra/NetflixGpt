@@ -11,7 +11,7 @@ export const API_OPTION={
     headers: {
       accept: 'application/json',
       
-       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYjBkOTEyMmZmMmRiOWNlOTU1YWQ0OWQ3ZmEyZjM2MyIsInN1YiI6IjY2NDIxNGI0MDczNTFjMzJiODU1Y2Q4OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Hr06fErHmYDmHTDgc2osDNVW4kPZA5Dbj5c1ZVyAmRs'
+       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYjBkOTEyMmZmMmRiOWNlOTU1YWQ0OWQ3ZmEyZjM2MyIsInN1YiI6IjY2NDIxNGI0MDczNTFjMzJiODU1Y2Q4OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Hr06fErHmYDmHTDgc2osDNVW4kPZA5Dbj5c1ZVyAmRs',
     
     }
   };
@@ -20,7 +20,10 @@ export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500/"
 export const SUPPORTED_LANGUAGES = [
   { identifier: "en", name: "English" },
   { identifier: "hindi", name: "Hindi" },
-  { identifier: "spanish", name: "Spanish" },
-  { identifier: "hebrew", name: "Hebrew" },
+  { identifier: "tamil", name: "tamil" },
   { identifier: "punjabi", name: "Punjabi" },
+  { identifier: "bengali", name: "Bengali" },
+
 ];
+
+export const OPENAI_KEY=process.env.OPENAI_KEY
