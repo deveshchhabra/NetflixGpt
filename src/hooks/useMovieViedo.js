@@ -1,17 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { API_OPTION } from "../utils/constant";
 import { addTrailerViedo } from "../utils/movieSlice";
 import { useEffect } from "react";
-const useMovieTrailer=(movieId)=>{
+const useMovieTrailer=()=>{
     const dispatch=useDispatch();
     const trailerVideo = useSelector((store) => store.movies.trailerVideo);
 
     // const [TrailerId, setTrailerId] = useState(null);
     //fetch the viedo && Updating the store
    
-useEffect(()=>{
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-      
     const getMovieVideos = async () => {
         const data = await fetch('https://api.themoviedb.org/3/movie/823464/videos?language=en-US', API_OPTION)
         const JSON=await data.json()
@@ -21,7 +18,10 @@ useEffect(()=>{
     dispatch(addTrailerViedo(trailer));
     
     }
-    getMovieVideos();
+useEffect(()=>{
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+   !trailerVideo && getMovieVideos();
+    // eslint-disable-next-line
 },[])
 }
 

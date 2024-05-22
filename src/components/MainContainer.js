@@ -2,11 +2,9 @@
 import { useSelector } from 'react-redux';
 import ViedoTitle from './ViedoTitle';
 import ViedoBackground from './ViedoBackground';
-import { useState } from 'react';
 
 const MainContainer = () => {
 
-  const [Ham, setHam] = useState(true);
 
     const movies=useSelector((store)=>store.movies?.nowPlayingMovies);
     if(!movies)return 
@@ -18,7 +16,7 @@ const MainContainer = () => {
       <div className='pt-[30%] bg-black md:pt-0'>
       
       <ViedoTitle title={original_title} overview={overview}/>
-      <ViedoBackground movieId={id} mute={Ham}/>
+      <ViedoBackground movieId={id} />
     </div>
   )
 }

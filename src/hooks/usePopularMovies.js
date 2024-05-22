@@ -13,8 +13,11 @@ const usePopularMovies=()=>{
     // console.log(json.results);
     dispatch(addPopularMovies(json.results))
   }
+
   useEffect(()=>{
-   !PopularMovies &&getPlayingMovies();
+   // eslint-disable-next-line
+    !PopularMovies &&getPlayingMovies();
+     // eslint-disable-next-line
   },[])
 }
 

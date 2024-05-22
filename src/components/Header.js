@@ -24,12 +24,14 @@ const Header = () => {
     });
   }
   useEffect(() => {
+     // eslint-disable-next-line
     const unsubscibe=onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/auth.user
       const {uid,email,displayName,photoURL} = user;
       dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
+       // eslint-disable-next-line
       navigate("/browse");
     } else {
       // User is signed out
@@ -37,10 +39,12 @@ const Header = () => {
       dispatch(removeUser());
       navigate("/");
     }
+     // eslint-disable-next-line
   });
+   // eslint-disable-next-line
   return ()=> unsubscibe();
-  }, 
-  []);
+ // eslint-disable-next-line  
+}, []);
   const handleLanguageChange=(e)=>{dispatch(changeLanguage(e.target.value));};
 
   const handleGptSearchClick =()=>{dispatch(toggleGptSearchView())}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useMovieTrailer from '../hooks/useMovieViedo'
 import {  useSelector } from 'react-redux'
 import lang from '../utils/languageConstant'
@@ -9,7 +9,7 @@ const ViedoBackground = ({movieId}) => {
   const MuteGpt=useSelector(store=>store.gpt.MuteGpt);
   console.log(MuteGpt)
 
-    const trailerViedo=useSelector(store=>store.movies?.trailerViedo)
+   
     useMovieTrailer({movieId});
     return (
 

@@ -16,7 +16,9 @@ const useUpcomingMovies=()=>{
     dispatch(addUpcomingMovies(json.results))
   }
   useEffect(()=>{
+     // eslint-disable-next-line
     !trailer &&getUpcomingMovies();
+     // eslint-disable-next-line
   },[])
 }
 export default useUpcomingMovies;

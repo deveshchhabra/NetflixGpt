@@ -1,11 +1,8 @@
-import { useState } from "react"
-import ViedoBackground from "./ViedoBackground";
-import MainContainer from "./MainContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMuteGpt } from "../utils/gptSlice";
 import lang from '../utils/languageConstant'
 
-const ViedoTitle = ({title,overview}) => {
+const ViedoTitle = () => {
   const langKey=useSelector((store)=>store.config.lang)
 
   const dispatch=useDispatch();
